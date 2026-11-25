@@ -4,10 +4,15 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Michroma&family=Story+Script&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
+html{
+    scroll-behavior: smooth;
+}
 
 body{
     margin: 0;
+
 }
 
 
@@ -44,14 +49,22 @@ h2{
 
 h3{
     background-color: #FFFFFF;
+
     width: 90%;
-    text-align: center;
     align-self: center;
-    border-top: 3px #000000 solid;
-    border-bottom: 3px #000000 solid;
+
+    font-size: 20px;
+    text-align: center;
+    font-family: "Fira Sans", sans-serif;
+    font-weight: 400;
+    font-style: normal;    
+
+    border: 5px #000000 solid;
+    border-radius: 20px;
+
 }
 
-i{
+a > i{
     color: #FFFFFF;
     margin: 10px;
     font-size: 30px;
@@ -82,7 +95,11 @@ nav{
         font-optical-sizing: auto;
         font-weight: 200;
         font-style: normal;
+        text-align: center;
+
         color: #FFFFFF;
+
+        width: 25%;
 
         &:hover{
             animation: link-in-animation 0.5s forwards;
@@ -96,11 +113,10 @@ nav{
 
 
 
-#acceuil{
-    background-image: url("./../images/code.png");
+#accueil{
+    background: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url("./../images/code.png");
     background-size: cover;
     background-position: center;
-    filter: grayscale(50%);
 
     #auteur{
         margin: auto;
@@ -154,35 +170,45 @@ nav{
 #gaucheEducation, #droiteExperience, #gaucheInformation{
     padding-top: 100px;
     padding-bottom: 100px;
+
     display: flex;
     flex-direction: column; 
     justify-content: center; 
+
     width: 50%;
     background-color: #3e3e3e;
 
     > div{
         display: flex;
         flex-direction: column; 
-        width: 90%;
+
         align-self: center;
+        width: 90%;
         
         div{
             display: flex;
             flex-direction: row;
             justify-content: space-between;
             
-            p:nth-child(1){
+            p:first-child{
                 background-color: #FFFFFF;
-                padding: 5px;
-                width: 20%;
-                border-right: 2px #000000 solid;
+
+                width: 25%;
                 left: 0;
-            }
-            p:nth-child(2){
-                background-color: #FFFFFF;
+
                 padding: 5px;
-                width: 75%;
+                border-right: 5px #000000 solid;
+                border-radius: 10px;
+            }
+            p:last-child{
+                background-color: #FFFFFF;
+
+                width: 70%;
                 right: 0;
+
+                padding: 5px;
+                border-radius: 10px;
+                border-left: 5px #000000 solid;
             }
         }
 
@@ -219,7 +245,7 @@ nav{
     }
 
     img{
-        border-radius: 10%;
+        border-radius: 10px;
         width: 90%;
         display: block;
         margin: auto;
@@ -254,43 +280,69 @@ nav{
 
     display: flex;
     justify-content: center;
+
     padding-top: 30px; 
     width: 50%;
-    background-color: lightcoral;
 
     p{
         width: 50%;
-        font-size: 30px;
         align-self: center;
-        text-align: center;
-        margin: 0;
+
         background-color: #FFFFFF80;
         backdrop-filter: blur(2px);
+
+        margin: 0;
         padding: 10%;
         border-radius: 20px;
+
+        font-size: 30px;
+        text-align: center;
+        font-family: "Fira Sans", sans-serif;
+        font-weight: 400;
+        font-style: normal;    
     }
 
     div{
         display: flex;
         flex-direction: column; 
         justify-content: space-evenly;
+
         width: 80%;
         height: 80%;
+        
         margin: auto;
 
 
         button{
             width: 40%;
             height: 100px;
+
             align-self: center;
-            background-color: blue;
+
+            background: linear-gradient(blue,cyan);
+
             border: none;
             border-radius: 50px;
 
-            img{
-                display: block;
-                margin: auto;
-                width: 30%;
+            &:hover{
+                animation: button-in-animation 0.5s forwards;
+
+                i{ animation: button-icon-in-animation 0.5s forwards; }
+            }
+
+            &:not(hover){
+                animation: button-out-animation 0.5s forwards;
+
+                i{ animation: button-icon-out-animation 0.5s forwards; }
+            }
+
+            i {
+                text-align: center;
+                color: #FFFFFF;
+
+                margin: 10px;
+
+                font-size: 30px;
             }
         }
 
@@ -421,3 +473,45 @@ footer{
     }
 }
 
+@keyframes button-in-animation {
+    from{        
+        width: 40%;
+        height: 100px;
+
+        border-radius: 50px;
+    }
+    to{        
+        width: 50%;
+        height: 125px;
+        border-radius: 62.5px;
+    }
+}
+@keyframes button-out-animation {
+    from{    
+        width: 50%;
+        height: 125px; 
+        border-radius: 62.5px;   
+    }
+    to{        
+        width: 40%;
+        height: 100px;     
+        border-radius: 50px;
+    }
+}
+
+@keyframes button-icon-in-animation {
+    from{        
+        font-size: 40px;
+    }
+    to{        
+        font-size: 50px;
+    }
+}
+@keyframes button-icon-out-animation {
+    from{    
+        font-size: 50px;
+    }
+    to{        
+        font-size: 40px;
+    }
+}
