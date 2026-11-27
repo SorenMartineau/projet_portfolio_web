@@ -508,10 +508,10 @@ footer{
 }
 
 
-#gaucheEducation, #droiteExperience, #gaucheInformation{
+#gaucheEducation, #gaucheInformation{
     overflow: hidden; 
       
-    #animationEducation, #animationExperience, #animationInformation{
+    #animationEducation, #animationInformation{
         display: flex;
         justify-content: center;
         background-color: #00000000;
@@ -614,3 +614,141 @@ footer{
         transform: rotate(360deg);
     }
 }
+
+
+#droiteExperience{
+
+
+    #animationExperience{
+
+        div:nth-child(even){
+            position: absolute;
+            bottom: 0;
+            width:10%        
+        }
+        div:nth-child(odd){
+            position: absolute;
+            top: 0;
+            width:10%        
+        }
+
+        div:nth-child(1){
+            left: 1%;
+            background-color: #ff595e;
+            animation: taille 2s linear infinite;
+        }
+        div:nth-child(2){
+            left: 1%;
+            background-color: #ff595e;
+            animation: taille 2s linear infinite reverse;
+        }
+
+        div:nth-child(3){
+            left: 12%;
+            background-color: #ff924c;
+            animation: taille 3s linear infinite;
+        }
+        div:nth-child(4){
+            left: 12%;
+            background-color: #ff924c;
+            animation: taille 3s linear infinite reverse;
+        }
+
+
+        div:nth-child(5){
+            left: 23%;
+            background-color: #ffca3a;
+            animation: taille 4s linear infinite;
+        }
+        div:nth-child(6){
+            left: 23%;
+            background-color: #ffca3a;
+            animation: taille 4s linear infinite reverse;
+        }
+
+        div:nth-child(7){
+            left: 34%;
+            background-color: #c5ca30;
+            animation: taille 5s linear infinite;
+        }
+        div:nth-child(8){
+            left: 34%;
+            background-color: #c5ca30;
+            animation: taille 5s linear infinite reverse;
+        }
+
+        div:nth-child(9){
+            left: 45%;
+            background-color: #8ac926;
+            animation: taille 6s linear infinite;
+        }
+        div:nth-child(10){
+            left: 45%;
+            background-color: #8ac926;
+            animation: taille 6s linear infinite reverse;
+        }
+
+        div:nth-child(11){
+            left: 56%;
+            background-color: #52a675;
+            animation: taille 7s linear infinite;
+        }
+        div:nth-child(12){
+            left: 56%;
+            background-color: #52a675;
+            animation: taille 7s linear infinite reverse;
+        }
+
+        div:nth-child(13){
+            left: 67%;
+            background-color: #1982c4;
+            animation: taille 8s linear infinite;
+        }
+        div:nth-child(14){
+            left: 67%;
+            background-color: #1982c4;
+            animation: taille 8s linear infinite reverse;
+        }
+
+        div:nth-child(15){
+            left: 78%;
+            background-color: #4267ac;
+            animation: taille 9s linear infinite;
+        }
+        div:nth-child(16){
+            left: 78%;
+            background-color: #4267ac;
+            animation: taille 9s linear infinite reverse;
+        }
+
+        div:nth-child(17){
+            left: 89%;
+            background-color: #6a4c93;
+            animation: taille 10s linear infinite;
+        }
+        div:nth-child(18){
+            left: 89%;
+            background-color: #6a4c93;
+            animation: taille 10s linear infinite reverse;
+        }
+    }   
+}
+
+@keyframes taille {
+    0%{
+        height: 45%;
+    }
+    25%{
+        height: 80%;
+    }
+    50%{
+        height: 45%;
+    }
+    75%{
+        height: 10%;
+    }
+    100%{
+        height: 45%;
+    }
+}
+
