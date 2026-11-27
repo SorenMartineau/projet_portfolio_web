@@ -28,6 +28,8 @@ h1{
 }
 
 h2{
+    z-index: 2;
+
     color: #000000;
     padding: 10px;
     background-color:  #FFFFFF;
@@ -165,29 +167,36 @@ nav{
 
     > div{
         display: flex;
-        flex-direction: row;  
-        justify-content: space-evenly;
-
+        flex-direction: row;
     }
 }
 
-#gaucheEducation, #droiteExperience, #gaucheInformation{
-    padding-top: 100px;
-    padding-bottom: 100px;
 
+#gaucheEducation, #droiteExperience, #gaucheInformation{
     display: flex;
     flex-direction: column; 
     justify-content: center; 
 
     width: 50%;
-    background-color: #3e3e3e;
+    background-color: black;
 
-    > div{
+    position: relative;
+
+    #tableauEducation, #tableauExperience, #tableauInformation{
+        z-index: 1;
+
         display: flex;
         flex-direction: column; 
 
         align-self: center;
         width: 90%;
+
+        background-color: #ffffff30;
+        border-radius: 20px;        
+
+        margin-top: 100px;
+        margin-bottom: 100px;
+        padding: 10px;
         
         div{
             display: flex;
@@ -230,12 +239,17 @@ nav{
         display: flex;
         flex-direction: row;
         justify-content: space-evenly;
+        
         background-color: #ffffff80;
         backdrop-filter: blur(2px);
         border-radius: 20px;
+
         width: 80%;
-        height: 80%;
-        margin: auto;
+
+        padding-top: 100px;
+        padding-bottom: 100px;
+        margin-top: 100px;
+        margin-bottom: 100px;
     }
 
     figure{
@@ -262,13 +276,6 @@ nav{
 }
 
 
-#droiteEducation{
-    background-image: url("./../images/mur-plantes.png");
-    background-size: cover;
-    background-position: center;
-}
-
-
 #gaucheExperience{
     background-image: url("./../images/centrale.png");
     background-size: cover;
@@ -280,34 +287,30 @@ nav{
     padding-top: 30px; 
     width: 50%;
 
-    p{
-        width: 50%;
-        align-self: center;
-
-        background-color: #FFFFFF80;
-        backdrop-filter: blur(2px);
-
-        margin: 0;
-        padding: 10%;
-        border-radius: 20px;
-
-        font-size: 30px;
-        text-align: center;
-        font-family: "Fira Sans", sans-serif;
-        font-weight: 400;
-        font-style: normal;    
-    }
-
     div{
         display: flex;
         flex-direction: column; 
-        justify-content: space-evenly;
+        justify-content: center;
 
-        width: 80%;
-        height: 80%;
-        
-        margin: auto;
+        margin-top: 100px;
+        margin-bottom: 100px;
 
+        p{
+            width: 50%;
+            align-self: center;
+
+            background-color: #FFFFFF80;
+            backdrop-filter: blur(2px);
+
+            padding: 10%;
+            border-radius: 20px;
+
+            font-size: 30px;
+            text-align: center;
+            font-family: "Fira Sans", sans-serif;
+            font-weight: 400;
+            font-style: normal;    
+        }
 
         button{
             width: 40%;
@@ -346,6 +349,13 @@ nav{
 
 }
 
+
+#droiteEducation{
+    background-image: url("./../images/mur-plantes.png");
+    background-size: cover;
+    background-position: center;
+}
+
 #droiteInformation{
     background-image: url("./../images/espace.png");
     background-size: cover;
@@ -382,7 +392,6 @@ footer{
         width: 100% !important;
     }
 
-
     #education, #information{
         > div{
             flex-direction: column;
@@ -397,14 +406,16 @@ footer{
         }
     }
 
-    #gaucheEducation, #droiteEducation, #gaucheExperience, #droiteExperience, #gaucheInformation, #droiteInformation{
+    #gaucheEducation, #droiteExperience, #gaucheInformation{
         width: 100%;
-        height: 400px;
+    }
+
+    #droiteEducation, #gaucheExperience, #droiteInformation{
+        width: 100%;      
+        padding-top: 0; 
     }
 
 }
-
-
 
 
 @keyframes link-in-animation {
@@ -493,5 +504,113 @@ footer{
     }
     to{        
         font-size: 40px;
+    }
+}
+
+
+#gaucheEducation, #droiteExperience, #gaucheInformation{
+    overflow: hidden; 
+      
+    #animationEducation, #animationExperience, #animationInformation{
+        display: flex;
+        justify-content: center;
+        background-color: #00000000;
+
+        width: 100%;
+        height: 0;
+        aspect-ratio: 1/1;
+
+        padding-bottom:100%;
+        
+        position: absolute;  
+
+        div{
+            position: absolute;
+            margin: auto;
+
+            right: 0;
+            top:0;
+            bottom: 0;
+
+            width: 5%;
+            height: 5%;
+
+            border-radius: 50%;            
+        }
+
+        div:nth-child(1){
+            left: 10%;
+            background-color: #0a141f;
+            transform-origin: -50%;
+            animation: rotation 2s linear infinite;          
+        }
+        div:nth-child(2){
+            left: 20%;
+            background-color: #132232;
+            transform-origin: -150%;
+            animation: rotation 3s linear infinite;
+        }
+        div:nth-child(3){
+            left: 30%;
+            background-color: #1d3045;
+            transform-origin: -250%;
+            animation: rotation 4s linear infinite;
+        }
+        div:nth-child(4){
+            left: 40%;
+            background-color: #26405a;
+            transform-origin: -350%;
+            animation: rotation 5s linear infinite;
+        }
+        div:nth-child(5){
+            left: 50%;
+            background-color: #315070;
+            transform-origin: -450%;
+            animation: rotation 6s linear infinite;
+        }
+        div:nth-child(6){
+            left: 60%;
+            background-color: #3b6086;
+            transform-origin: -550%;
+            animation: rotation 7s linear infinite;
+        }
+        div:nth-child(7){
+            left: 70%;
+            background-color: #45729d;
+            transform-origin: -650%;
+            animation: rotation 8s linear infinite;
+        }
+        div:nth-child(8){
+            left: 80%;
+            background-color: #5083b4;
+            transform-origin: -750%;
+            animation: rotation 9s linear infinite;
+        }
+        div:nth-child(9){
+            left: 90%;
+            background-color: #5b95cc;
+            transform-origin: -850%;
+            animation: rotation 10s linear infinite;
+        }
+
+    }   
+}
+
+
+@keyframes rotation {
+    0%{
+        transform: rotate(0deg);
+    }
+    25%{
+        transform: rotate(90deg);
+    }
+    50%{
+        transform: rotate(180deg);
+    }
+    75%{
+        transform: rotate(270deg);
+    }
+    100%{
+        transform: rotate(360deg);
     }
 }
